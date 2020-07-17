@@ -82,7 +82,7 @@ html {
   color: #212121;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-decoration: none;
-  transition-property: all;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -143,32 +143,30 @@ html {
   display: flex;
   background-size: cover;
   display: inline-block;
-  fill: var(--text-color);
   width: 13px;
   height: 18px;
   position: relative;
   top: 4px;
+  --color1: currentColor;
 }
 
 .icon-envelope {
   display: inline-block;
-  fill: var(--text-color);
   padding: 0;
   width: 20px;
   height: 14.2px;
   position: relative;
   top: 2px;
+  --color1: currentColor;
 }
 
 .link-contact:hover,
-.link-contact:hover svg {
-  fill: var(--accent-color);
+.link-contact:focus svg {
   color: var(--accent-color);
 }
 
-.icon-phone,
-.icon-envelope .link-contact {
-  transition-property: color, fill;
+.link-contact {
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -232,7 +230,7 @@ html {
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
-  transition-property: all;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -437,9 +435,10 @@ a {
   text-align: center;
 }
 
+/*list-icon*/
+
 .list-icon {
   width: 206px;
-  height: 44px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -449,33 +448,37 @@ a {
   margin-left: 32px;
 }
 
+.box-icon-social {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  background-color: white;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  color: var(--section-color);
+}
+
 .icon-social {
   text-align: center;
   width: 20px;
   height: 20px;
-}
-.link-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  --color1: currentColor;
 }
 
-.li-soc-memb:hover,
-.li-soc-memb:focus svg {
+.box-icon-social:hover,
+.box-icon-social:focus svg {
   width: 44px;
   height: 44px;
   border-radius: 100%;
   background-color: var(--accent-color);
-  --color1: white;
+  color: white;
 }
 
-.li-soc-memb {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition-property: all;
+.box-icon-social {
+  transition-property: color fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -506,9 +509,7 @@ a {
   box-sizing: border-box;
   border-radius: 4px;
   background-size: contain;
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--section-color);
 }
 
 .link-customer {
@@ -516,20 +517,20 @@ a {
 }
 
 .logo-box:hover,
-.logo-box:focus {
-  --color1: var(--accent-color);
+.logo-box:focus svg {
+  color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
 
-.logo-box,
-.logo {
-  transition-property: all;
+.logo-box {
+  transition-property: color border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo {
   background-size: contain;
+  --color1: currentColor;
 }
 
 .customer:last-of-type {
@@ -615,6 +616,8 @@ a {
   color: var(--hero--text-color);
 }
 
+/*footer-icon-list*/
+
 .footer-icon-list {
   display: flex;
   padding: 0;
@@ -622,7 +625,7 @@ a {
   margin-top: 21px;
 }
 
-.li-social-footer {
+.box-icon-footer {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -631,7 +634,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-property: all;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -643,11 +646,13 @@ a {
   --color1: white;
 }
 
-.li-social-footer:hover,
-.li-socail-footer:focus {
+.box-icon-footer:hover,
+.box-icon-footer:focus {
   border-radius: 100%;
   background-color: var(--accent-color);
 }
+
+/*mail-input*/
 
 .mail-input {
   font-family: Roboto;
@@ -698,7 +703,7 @@ a {
   border: none;
   width: 200px;
   height: 50px;
-  transition-property: all;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -748,7 +753,7 @@ a {
   border: none;
   margin: 8px;
   align-items: center;
-  transition-property: all;
+  transition-property: color background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -785,7 +790,7 @@ a {
   z-index: 1;
   border-radius: 5px;
   overflow: hidden;
-  transition-property: all;
+  transition-property: border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
